@@ -1,6 +1,6 @@
 # The Open Legal Toolkit
 
-> The tölt is a four-beat lateral ambling gait mainly found in Icelandic horses.
+> The tölt is a four-beat lateral ambling gait mainly found in Icelandic horses.  
 > Known for its explosive acceleration and speed, it is also comfortable and ground-covering.
 
 ## Quickstart
