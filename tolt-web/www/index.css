@@ -1,0 +1,105 @@
+* {
+  background: #ff00;
+  margin: 0;
+  padding: 0;
+  color: #eee;
+  font-family: monospace;
+}
+
+body {
+  background: #111;
+  max-width: 100vw;
+  max-height: 100vh;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+a {
+  text-decoration: none;
+}
+
+
+a:hover {
+  color: #5fb5d7;
+}
+
+
+a:hover, .add-one, .remove-one, .button-details {
+  cursor: pointer;
+}
+
+h1 {
+  font-size: 1.1em;
+  color: #5fb5d7;
+  padding-bottom: 0.5em;
+}
+
+.tool {
+  padding: 1em;
+}
+
+#div_main_menu {
+  display: flex;
+}
+
+#navigation > a:not(:last-child):after {
+  content: " / ";
+  color: #eee;
+}
+
+#subcommands {
+  padding-left: 1em;
+}
+
+#subcommands > a {
+  display: block;
+}
+
+.tool {
+  display: none;
+}
+
+.criteria {
+  padding: 1em;
+  background: #333;
+  border-radius: 1em;
+  margin: 0.5em;
+  width: 0;
+  flex-grow: 1;
+}
+
+#sas-or-sarl .criteria-wrapper {
+  display: flex;
+}
+
+#sas-or-sarl button {
+  padding: 1em;
+  margin: 0.5em;
+  border: none;
+  background: #333;
+  border-radius: 1em;
+  width: 4em;
+}
+
+#sas-or-sarl .criteria-wrapper.explanation button {
+  background: none;
+}
+#sas-or-sarl .criteria-wrapper.explanation .criteria {
+  background: none;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.response {
+  padding-left: 0.5em;
+  padding-top: 0.5em;
+  color: #43c576;
+}
+
+#sas-or-sarl .highlight-points {
+  background: #333;
+  color: #43c576;
+}
+#sas-or-sarl .no-highlight-points {
+  background: #0000;
+}
