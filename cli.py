@@ -9,12 +9,12 @@ import uuid
 
 
 short_name = "tolt"
-local_path = f"{os.environ['HOME']}/github.com/loicbourgois/tolt"
+root_folder = f"{os.environ['HOME']}/github.com/loicbourgois/tolt"
 logger_name = "tolt-cli"
 
 
 logging.basicConfig(
-    format='GMT %(asctime)s %(filename)20s %(funcName)20s %(lineno)4s %(levelname)7s | %(message)s',
+    format='GMT %(asctime)s %(filename)20s %(funcName)20s() %(lineno)4s %(levelname)7s | %(message)s',
     level=logging.DEBUG,
 )
 logging.Formatter.converter = time.gmtime
@@ -101,14 +101,14 @@ def invalid_command():
 
 
 def push():
-    runcmd(f"git -C {local_path} add .")
-    runcmd(f"git -C {local_path} commit -m up")
-    runcmd(f"git -C {local_path} push")
+    runcmd(f"git -C {root_folder} add .")
+    runcmd(f"git -C {root_folder} commit -m up")
+    runcmd(f"git -C {root_folder} push")
 
 
 def status():
-    runcmd(f"git -C {local_path} fetch --all")
-    runcmd(f"git -C {local_path} status")
+    runcmd(f"git -C {root_folder} fetch --all")
+    runcmd(f"git -C {root_folder} status")
 
 
 def sync():
@@ -116,7 +116,7 @@ def sync():
 
 
 def readme():
-    runcmd(f"open {local_path}/README.md")
+    runcmd(f"open {root_folder}/README.md")
 
 
 def help():
@@ -133,6 +133,25 @@ def about():
     logger.info("Say hi at https://github.com/loicbourgois/tolt.")
 
 
+def dev():
+    build()
+    runcmd(f"npm --prefix {root_folder}/tolt-web/www run start")
+
+
+def build():
+    runcmd(f"wasm-pack build {root_folder}/tolt-web")
+    runcmd(f"npm install {root_folder}/tolt-web/www")
+    #runcmd(f"npm --prefix {root_folder}/tolt-web/www run start")
+
+
+def release():
+    build()
+    #runcmd(f"npm audit fix {root_folder}/tolt-web/www")
+    build()
+
+
+def cd():
+    logger.info(f"cd {root_folder}")
 
 commands = {
     'about': {
@@ -158,6 +177,22 @@ commands = {
     'sync': {
         'func': sync,
         'doc': 'sync',
+    },
+    'dev': {
+        'func': dev,
+        'doc':  'dev'
+    },
+    'cd': {
+        'func': cd,
+        'doc':  'cd'
+    },
+    'build': {
+        'func': build,
+        'doc':  'build'
+    },
+    'release': {
+        'func': release,
+        'doc': release
     },
     None: {
         'func': invalid_command,
