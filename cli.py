@@ -149,7 +149,6 @@ def release():
     build()
     runcmd(f"npm --prefix {root_folder}/tolt-web/www run build")
     runcmd(f"cp -r {root_folder}/tolt-web/www/dist {root_folder}/docs")
-    runcmd(f"open {root_folder}/docs")
 
 
 def cd():
