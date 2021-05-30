@@ -1,4 +1,7 @@
-# [The Open Legal Toolkit](https://loicbourgois.github.io/tolt/)
+# The Open Legal Toolkit
+
+[Web Application](https://loicbourgois.github.io/tolt/)
+
 
 > The tölt is a four-beat lateral ambling gait mainly found in Icelandic horses.  
 > Known for its explosive acceleration and speed, it is also comfortable and ground-covering.
