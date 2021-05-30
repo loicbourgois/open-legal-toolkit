@@ -172,8 +172,8 @@ const sas_or_sarl = () => {
     }, {
         text: "Je ne veux pas payer de charges sociales sur les dividendes .",
         impact: {
-          sas:  -1,
-          sarl: +1,
+          sas:  +1,
+          sarl: -1,
         },
     }]
   }

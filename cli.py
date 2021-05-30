@@ -145,6 +145,7 @@ def build():
 
 
 def release():
+    runcmd(f"rm -rf {root_folder}/docs")
     runcmd(f"npm audit fix {root_folder}/tolt-web/www")
     build()
     runcmd(f"npm --prefix {root_folder}/tolt-web/www run build")
