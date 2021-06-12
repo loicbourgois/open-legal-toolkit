@@ -102,11 +102,10 @@ const sas_or_sarl = () => {
   const criterias = {
       html: get('sas-or-sarl-criterias'),
       data: [{
-        text: "Je souhaite pouvoir céder mes titres sans agrément.",
+        text: "Je souhaite pouvoir céder mes titres sans agrément, c'est-à-dire sans l'accord d'un ou plusieurs de mes associés.",
         details: [
-          "Clause d’agrément.",
-          "Prévue par la loi pour les cessions aux tiers, extension aux autres cessions possibles statutairement (1).",
-          "Rien n’est imposé par la loi mais peut être prévue dans les statuts.",
+          "En SARL, il est obligatoire de demander l'accord des autres associés lorsque l'on souhaite céder ses titres (parts sociales) à un tiers, c'est-à-dire à une personne qui n'est pas dans l'entreprise",
+          "En SAS, il est possible de céder ses actions à la personne de son choix ou de prévoir l'accord de ses associés. Il faudra décider cela dans les statuts de la société.",
         ],
         impact: {
           sas:  +1,
