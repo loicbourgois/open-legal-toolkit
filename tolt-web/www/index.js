@@ -104,7 +104,7 @@ const sas_or_sarl = () => {
       data: [{
         text: "Je souhaite pouvoir céder mes titres sans agrément, c'est-à-dire sans l'accord d'un ou plusieurs de mes associés.",
         details: [
-          "En SARL, il est obligatoire de demander l'accord des autres associés lorsque l'on souhaite céder ses titres (parts sociales) à un tiers, c'est-à-dire à une personne qui n'est pas dans l'entreprise",
+          "En SARL, il est obligatoire de demander l'accord des autres associés lorsque l'on souhaite céder ses titres (parts sociales) à un tiers, c'est-à-dire à une personne qui n'est pas dans l'entreprise.",
           "En SAS, il est possible de céder ses actions à la personne de son choix ou de prévoir l'accord de ses associés. Il faudra décider cela dans les statuts de la société.",
         ],
         impact: {
