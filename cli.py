@@ -124,6 +124,9 @@ def help():
     for key, command in commands.items():
         if key is not None:
             logger.info(f"    {short_name} {command['doc']}")
+            if command.get("descriptions") is not None:
+                for line in command['descriptions']:
+                    logger.info(f"    # {line}")
             if command.get("example"):
                 logger.info(f"      example: {command['example']}")
 
@@ -141,7 +144,6 @@ def dev():
 def build():
     runcmd(f"wasm-pack build {root_folder}/tolt-web")
     runcmd(f"npm install {root_folder}/tolt-web/www")
-    #runcmd(f"npm --prefix {root_folder}/tolt-web/www run start")
 
 
 def release():
@@ -194,7 +196,11 @@ commands = {
     },
     'release': {
         'func': release,
-        'doc': release
+        'doc': 'release',
+        'descriptions': [
+            'Update the docs/ folder to create a new release.',
+            'To deploy the new release, you need to merge the changes on main.',
+        ]
     },
     None: {
         'func': invalid_command,
